@@ -4,30 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ladies Club | Contact</title>
-  <link rel="stylesheet" href="asset/css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+  <nav class="navbar">
+    <div class="nav-brand">Ladies Club 🌸</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 
-  <main>
-    <h2>Contact Me</h2>
-    <form>
-      <label>Name:</label>
-      <input type="text" name="name" />
+  <main class="contact-container">
+    <h2>🌸 Get in Touch</h2>
+    <form class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
-      <label>Email:</label>
-      <input type="email" name="email" />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
-      <label>Message:</label>
-      <textarea name="message"></textarea>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
 
-      <button type="submit">Send</button>
+      <button type="submit">Send Message</button>
     </form>
   </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
 
   <script src="asset/js/script.js"></script>
 </body>
