@@ -1,43 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ladies Club | Home</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="nav-brand">Ladies Club 🌸</div>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ladies Club | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+  body {
+      background: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
 
-    <header class="header-flex">
-      <div class="date-time-widget">
-        <p><strong>📅 Today's Date:</strong> <span id="today-date"></span></p>
-      </div>
-      <h1>Welcome to The Ladies Club</h1>
-    </header>
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
 
-    <section class="hero">
-      <img src="asset/20250322_163919.jpg" alt="Banner" class="hero-image" />
-    </section>
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff0f6;
+      border-bottom: 2px solid #f8d7e3;
+      flex-wrap: wrap;
+    }
 
-    <script src="js/script.js"></script>
-    <section class="quote-widget">
-      <h3>🌸 Daily Inspiration</h3>
-      <p id="quote">Loading quote...</p>
-      <button id="reshuffle-btn">🔁 Reshuffle Quote</button>
-    </section>
-  </body>
+    .date-time-widget p {
+      margin: 0;
+      font-size: 1rem;
+      color: #e91e63;
+    }
+
+    .header-flex h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #e91e63;
+    }
+
+    .hero {
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .quote-widget {
+      background: #ffe6ef;
+      padding: 20px;
+      border-left: 5px solid #e91e63;
+      border-radius: 12px;
+      font-style: italic;
+      margin: 30px auto;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .quote-widget h3 {
+      margin-top: 0;
+      color: #e91e63;
+    }
+
+    #quote {
+      font-size: 1rem;
+      color: #444;
+      margin: 12px 0;
+    }
+
+    #reshuffle-btn {
+      margin-top: 12px;
+      padding: 10px 16px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    #reshuffle-btn:hover {
+      background-color: #d21858;
+    }
+
+    .site-footer {
+      background-color: #ffeff7;
+      color: #e91e63;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 40px;
+      box-shadow: 0 -4px 8px rgba(0,0,0,0.05);
+      border-top: 2px solid #f8d7e3;
+    }
+
+    .site-footer p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      margin-top: 8px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #e91e63;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar {
+      background-color: #ffeff7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e91e63;
+    }
+
+    .nav-links a {
+      margin-left: 16px;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: #fff;
+      color: #e91e63;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: #e91e63;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-flex h1 {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Ladies Club 🌸</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="header-flex">
+    <div class="date-time-widget">
+      <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
+    </div>
+    <h1>Welcome to The Ladies Club</h1>
+  </header>
+
+  <section class="hero">
+    <img src="asset/20250322_163919.jpg" alt="Banner" class="hero-image" />
+  </section>
+
+  <section class="quote-widget">
+    <h3>🌸 Daily Inspiration</h3>
+    <p id="quote">Loading quote...</p>
+    <button id="reshuffle-btn">🔁 Reshuffle Quote</button>
+  </section>
 
   <footer class="site-footer">
     <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
@@ -47,4 +215,43 @@
       <a href="#">Instagram</a>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const todayDateElement = document.getElementById('today-date');
+      const now = new Date();
+      const dateOptions = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      if (todayDateElement) {
+        todayDateElement.textContent = now.toLocaleDateString(undefined, dateOptions);
+      }
+
+      const quotes = [
+        "Create with passion. Code with purpose.",
+        "A flower does not think of competing… it just blooms.",
+        "Design is intelligence made visible.",
+        "Code like a girl. Build like a queen. 🌸",
+        "Small details make the biggest impact.",
+        "Elegance is when the inside is as beautiful as the outside."
+      ];
+
+      const quoteEl = document.getElementById('quote');
+      const btn = document.getElementById('reshuffle-btn');
+
+      function showRandomQuote() {
+        const random = Math.floor(Math.random() * quotes.length);
+        quoteEl.textContent = quotes[random];
+      }
+
+      btn.addEventListener('click', showRandomQuote);
+
+      // Load one on page load
+      showRandomQuote();
+    });
+  </script>
+</body>
 </html>

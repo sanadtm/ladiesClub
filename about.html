@@ -1,121 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ladies Club | About</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/about.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="nav-brand">Ladies Club 🌸</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-    <header class="header-flex">
-      <div class="date-time-widget">
-        <p><strong>📅 Today's Date:</strong> <span id="today-date"></span></p>
-      </div>
-      <h1>Welcome to The Ladies Club</h1>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ladies Club | About</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+     body {
+      background: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
 
-    <main class="about-container">
-      <section class="about-intro">
-        <h2>About Me 🌟</h2>
-        <p>
-          Hi! I’m Sanad — a creative developer with a love for turning ideas
-          into interactive digital experiences. I enjoy working on projects that
-          blend design and functionality, and this site is my little tribute to
-          beautiful UI and playful creativity.
-        </p>
-      </section>
-      <!-- 
-    <section class="quote-widget">
-      <h3>🌸 Daily Inspiration</h3>
-      <p id="quote">Loading quote...</p>
-      <button id="reshuffle-btn">🔁 Reshuffle Quote</button>
-    </section> -->
 
-      <!-- <section class="gallery">
+    .navbar {
+      background-color: #ffeff7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e91e63;
+    }
+
+    .nav-links a {
+      margin-left: 16px;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: #fff;
+      color: #e91e63;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: #e91e63;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff0f6;
+      border-bottom: 2px solid #f8d7e3;
+      flex-wrap: wrap;
+    }
+
+    .date-time-widget p {
+      margin: 0;
+      font-size: 1rem;
+      color: #e91e63;
+    }
+
+    .header-flex h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #e91e63;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .about-intro {
+      background: #fff0f6;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .about-intro h2 {
+      color: #e91e63;
+      margin-bottom: 12px;
+    }
+
+    .gallery {
+      text-align: center;
+    }
+
+    .gallery h3 {
+      color: #e91e63;
+      margin-bottom: 16px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 14px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 192, 203, 0.95);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border: 4px solid #fff;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      color: #e91e63;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .site-footer {
+      background-color: #ffeff7;
+      color: #e91e63;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 -4px 8px rgba(0,0,0,0.05);
+      border-top: 2px solid #f8d7e3;
+    }
+
+    .site-footer p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      margin-top: 8px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #e91e63;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Ladies Club 🌸</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="header-flex">
+    <div class="date-time-widget">
+      <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
+    </div>
+    <h1>Welcome to The Ladies Club</h1>
+  </header>
+
+  <main class="about-container">
+    <section class="about-intro">
+      <h2>About Me 🌟</h2>
+      <p>
+        Hi! I’m Sanad — a creative developer with a love for turning ideas
+        into interactive digital experiences. I enjoy working on projects that
+        blend design and functionality, and this site is my little tribute to
+        beautiful UI and playful creativity.
+      </p>
+    </section>
+
+    <section class="gallery">
       <h3>📸 My Gallery</h3>
       <div class="gallery-grid">
-        <a href="#"><img src="asset/20250322_153547.jpg" alt="Snowboarding" /></a>
-        <a href="#"><img src="asset/20250322_163919.jpg" alt="Coding Setup" /></a>
-        <a href="#"><img src="asset/20250322_153549.jpg" alt="Life Vibes" /></a>
+        <img src="asset/20240906_125956.jpg" alt="Photo 1" class="gallery-img" />
+        <img src="asset/20240906_130054.jpg" alt="Photo 2" class="gallery-img" />
+        <img src="asset/20240906_142229.jpg" alt="Photo 3" class="gallery-img" />
+        <img src="asset/20241030_155311.jpg" alt="Photo 4" class="gallery-img" />
+        <img src="asset/20250322_153517.jpg" alt="Photo 5" class="gallery-img" />
+        <img src="asset/20250322_153547.jpg" alt="Photo 6" class="gallery-img" />
+        <img src="asset/20250402_203626.jpg" alt="Photo 7" class="gallery-img" />
+        <img src="asset/20250407_203519.jpg" alt="Photo 8" class="gallery-img" />
       </div>
-    </section> -->
+    </section>
 
-      <section class="gallery">
-        <h3>📸 My Gallery</h3>
-        <div class="gallery-grid">
-          <img
-            src="asset/20240906_125956.jpg"
-            alt="Photo 1"
-            class="gallery-img"
-          />
-          <img
-            src="asset/20240906_130054.jpg"
-            alt="Photo 2"
-            class="gallery-img"
-          />
-          <img
-            src="asset/20240906_142229.jpg"
-            alt="Photo 3"
-            class="gallery-img"
-          />
-          <img
-            src="asset/20241030_155311.jpg"
-            alt="Photo 4"
-            class="gallery-img"
-          />
-          <img
-            src="asset/20250322_153517.jpg"
-            alt="Photo 5"
-            class="gallery-img"
-          />
-          <img
-            src="asset/20250322_153547.jpg"
-            alt="Photo 6"
-            class="gallery-img"
-          />
-         
-              <img
-            src="asset/20250402_203626.jpg"
-            alt="Photo 7"
-            class="gallery-img"
-          />
-              <img
-            src="asset/20250407_203519.jpg"
-            alt="Photo 7"
-            class="gallery-img"
-          />
-        </div>
-      </section>
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
+  </main>
 
-      <!-- Lightbox Modal -->
-      <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" />
-      </div>
-    </main>
+  <footer class="site-footer">
+    <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
 
-    <footer class="site-footer">
-      <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Instagram</a>
-      </div>
-    </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const todayDateElement = document.getElementById('today-date');
+      const now = new Date();
+      const dateOptions = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      if (todayDateElement) {
+        todayDateElement.textContent = now.toLocaleDateString(undefined, dateOptions);
+      }
 
-    <script src="js/script.js"></script>
-  </body>
+      const images = document.querySelectorAll('.gallery-img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.querySelector('.lightbox .close');
+
+      images.forEach(img => {
+        img.addEventListener('click', () => {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = img.src;
+        });
+      });
+
+      closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
 </html>

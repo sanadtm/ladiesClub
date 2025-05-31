@@ -2,6 +2,7 @@
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
+  background-color: white;
   font-family: 'Poppins', sans-serif;
 }
 .nav-links a.active {

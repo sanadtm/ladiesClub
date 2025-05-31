@@ -4,10 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ladies Club | Contact</title>
- <link rel="stylesheet" href="css/style.css" />
- <link rel="stylesheet" href="css/contact.css" />
-
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+  body {
+      background: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff0f6;
+      border-bottom: 2px solid #f8d7e3;
+      flex-wrap: wrap;
+    }
+
+    .date-time-widget p {
+      margin: 0;
+      font-size: 1rem;
+      color: #e91e63;
+    }
+
+    .header-flex h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #e91e63;
+    }
+
+    .section-divider {
+      height: 4px;
+      width: 60px;
+      margin: 12px auto;
+      background-color: #e91e63;
+      border-radius: 4px;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff0f6;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      color: #e91e63;
+      margin-bottom: 24px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-form label {
+      font-weight: 500;
+      color: #444;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: 'Poppins', sans-serif;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #e91e63;
+      box-shadow: 0 0 0 4px #ffe3ec;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      background-color: #e91e63;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #d21858;
+    }
+
+    #confirmation {
+      display: none;
+      color: #e91e63;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .site-footer {
+      background-color: #ffeff7;
+      color: #e91e63;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 -4px 8px rgba(0,0,0,0.05);
+      border-top: 2px solid #f8d7e3;
+    }
+
+    .site-footer p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      margin-top: 8px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #e91e63;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -19,27 +167,30 @@
     </div>
   </nav>
 
-<header class="header-flex">
-  <div class="date-time-widget">
-    <p><strong>📅 Today's Date:</strong> <span id="today-date"></span></p>
-  </div>
-  <h1>Welcome to The Ladies Club</h1>
-</header>
+  <header class="header-flex">
+    <div class="date-time-widget">
+      <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
+    </div>
+    <h1>Welcome to The Ladies Club</h1>
+  </header>
+
+  <div class="section-divider"></div>
 
   <main class="contact-container">
     <h2>🌸 Get in Touch</h2>
     <form class="contact-form">
-      <label for="name">Name:</label>
+      <label for="name">👤 Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
-      <label for="email">Email:</label>
+      <label for="email">📧 Email:</label>
       <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
-      <label for="message">Message:</label>
+      <label for="message">💬 Message:</label>
       <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
 
       <button type="submit">Send Message</button>
     </form>
+    <p id="confirmation">📬 Message Sent! Thank you 🌸</p>
   </main>
 
   <footer class="site-footer">
@@ -51,6 +202,26 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const todayDateElement = document.getElementById('today-date');
+      const now = new Date();
+      const dateOptions = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      if (todayDateElement) {
+        todayDateElement.textContent = now.toLocaleDateString(undefined, dateOptions);
+      }
+
+      const form = document.querySelector('.contact-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.getElementById('confirmation').style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
