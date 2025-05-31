@@ -1,54 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ladies Club | About</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/about.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="nav-brand">Ladies Club 🌸</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ladies Club | About</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">Ladies Club 🌸</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <header class="header-flex">
+      <div class="date-time-widget">
+        <p><strong>📅 Today's Date:</strong> <span id="today-date"></span></p>
+      </div>
+      <h1>Welcome to The Ladies Club</h1>
+    </header>
 
-  <main class="about-container">
-    <section class="about-intro">
-      <h2>About Me 🌟</h2>
-      <p>Hi! I’m Sanad — a creative developer with a love for turning ideas into interactive digital experiences. I enjoy working on projects that blend design and functionality, and this site is my little tribute to beautiful UI and playful creativity.</p>
-    </section>
-
+    <main class="about-container">
+      <section class="about-intro">
+        <h2>About Me 🌟</h2>
+        <p>
+          Hi! I’m Sanad — a creative developer with a love for turning ideas
+          into interactive digital experiences. I enjoy working on projects that
+          blend design and functionality, and this site is my little tribute to
+          beautiful UI and playful creativity.
+        </p>
+      </section>
+      <!-- 
     <section class="quote-widget">
       <h3>🌸 Daily Inspiration</h3>
       <p id="quote">Loading quote...</p>
-    </section>
+      <button id="reshuffle-btn">🔁 Reshuffle Quote</button>
+    </section> -->
 
-    <section class="gallery">
+      <!-- <section class="gallery">
       <h3>📸 My Gallery</h3>
       <div class="gallery-grid">
         <a href="#"><img src="asset/20250322_153547.jpg" alt="Snowboarding" /></a>
         <a href="#"><img src="asset/20250322_163919.jpg" alt="Coding Setup" /></a>
         <a href="#"><img src="asset/20250322_153549.jpg" alt="Life Vibes" /></a>
       </div>
-    </section>
-  </main>
+    </section> -->
 
-  <footer class="site-footer">
-    <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Instagram</a>
-    </div>
-  </footer>
+      <section class="gallery">
+        <h3>📸 My Gallery</h3>
+        <div class="gallery-grid">
+          <img
+            src="asset/20240906_125956.jpg"
+            alt="Photo 1"
+            class="gallery-img"
+          />
+          <img
+            src="asset/20240906_130054.jpg"
+            alt="Photo 2"
+            class="gallery-img"
+          />
+          <img
+            src="asset/20240906_142229.jpg"
+            alt="Photo 3"
+            class="gallery-img"
+          />
+          <img
+            src="asset/20241030_155311.jpg"
+            alt="Photo 4"
+            class="gallery-img"
+          />
+          <img
+            src="asset/20250322_153517.jpg"
+            alt="Photo 5"
+            class="gallery-img"
+          />
+          <img
+            src="asset/20250322_153547.jpg"
+            alt="Photo 6"
+            class="gallery-img"
+          />
+         
+              <img
+            src="asset/20250402_203626.jpg"
+            alt="Photo 7"
+            class="gallery-img"
+          />
+              <img
+            src="asset/20250407_203519.jpg"
+            alt="Photo 7"
+            class="gallery-img"
+          />
+        </div>
+      </section>
 
-  <script src="js/script.js"></script>
-</body>
+      <!-- Lightbox Modal -->
+      <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" />
+      </div>
+    </main>
 
+    <footer class="site-footer">
+      <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
