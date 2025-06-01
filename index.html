@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ladies Club | Home</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  
-</head>
-<body>
-  <nav class="navbar">
-    <div class="nav-brand">Ladies Club 🌸</div>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+  <head>
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ladies Club | Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">Ladies Club 🌸</div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
 
-  <header class="header-flex">
-    <div class="date-time-widget">
-      <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
-    </div>
-    <h1>Welcome to The Ladies Club</h1>
-  </header>
+    <header class="header-flex">
+      <div class="date-time-widget">
+        <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
+      </div>
+      <h1>Welcome to The Ladies Club</h1>
+    </header>
 
-  <section class="hero">
-    <img src="asset/20250322_153517.jpg" alt="Banner" class="hero-image" />
-  </section>
+ <section class="hero">
+      <img data-aos="flip-left" src="asset/20250322_153517.jpg" alt="Banner" class="hero-image" />
+    </section>
 
-  <section style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-    <div class="quote-widget">
-      <h3>🌸 Daily Inspiration</h3>
-      <p id="quote">Loading quote...</p>
-      <button id="reshuffle-btn">🔁 Reshuffle Quote</button>
-    </div>
-    <div class="quote-widget">
-      <h3>🎄 Countdown to Christmas</h3>
-      <p id="countdown">Loading...</p>
-    </div>
-  </section>
+    <section
+      style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap"
+    >
+      <div data-aos="fade-up-right"  data-aos-delay="400" class="quote-widget">
+        <h3>🌸 Daily Inspiration</h3>
+        <p id="quote">Loading quote...</p>
+        <button id="reshuffle-btn">🔁 Reshuffle Quote</button>
+      </div>
+      <div data-aos="fade-up-left" data-aos-delay="400" class="quote-widget">
+        <h3>🎄 Countdown to Christmas</h3>
+        <p id="countdown">Loading...</p>
+      </div>
+    </section>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Instagram</a>
-    </div>
-  </footer>
-
-   <script src="js/script.js"></script>
-
-</body>
+    <footer class="site-footer">
+      <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

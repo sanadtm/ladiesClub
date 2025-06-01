@@ -1,61 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ladies Club | Contact</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/contact.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <style>
- 
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="nav-brand">Ladies Club 🌸</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-    </div>
-  </nav>
+  <head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ladies Club | Contact</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">Ladies Club 🌸</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </nav>
 
-  <header class="header-flex">
-    <div class="date-time-widget">
-      <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
-    </div>
-    <h1>Welcome to The Ladies Club</h1>
-  </header>
+    <header class="header-flex">
+      <div class="date-time-widget">
+        <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
+      </div>
+      <h1>Welcome to The Ladies Club</h1>
+    </header>
 
-  <div class="section-divider"></div>
+    <div class="section-divider"></div>
 
-  <main class="contact-container">
-    <h2>🌸 Get in Touch</h2>
-    <form class="contact-form">
-      <label for="name">👤 Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+    <main data-aos="zoom-in-up" class="contact-container">
+      <h2>🌸 Get in Touch</h2>
+      <form class="contact-form" id="contact-form">
+        <label for="name">👤 Name:</label>
+        <input data-aos="fade-right" data-aos-delay="400" type="text" id="name" name="name" placeholder="Enter your name" required />
 
-      <label for="email">📧 Email:</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        <label for="email">📧 Email:</label>
+        <input data-aos="fade-right" data-aos-delay="500" type="email" id="email" name="email" placeholder="you@example.com" required />
 
-      <label for="message">💬 Message:</label>
-      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+        <label for="message">💬 Message:</label>
+        <textarea data-aos="fade-right" data-aos-delay="600" id="message" name="message" placeholder="Write your message here..." required></textarea>
 
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="confirmation">📬 Message Sent! Thank you 🌸</p>
-  </main>
+        <button data-aos="fade-right" data-aos-delay="600" type="submit">Send Message</button>
+      </form>
+      <div id="popup" class="popup">📬 Message Sent! Thank you 🌸</div>
+    </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Instagram</a>
-    </div>
-  </footer>
+    <footer class="site-footer">
+      <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
 
-   <script src="js/script.js"></script>
-</body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Simulate email submission (since we can't use a backend/email service here)
+        setTimeout(() => {
+          const popup = document.getElementById('popup');
+          popup.style.display = 'block';
+          setTimeout(() => (popup.style.display = 'none'), 4000);
+          document.getElementById('contact-form').reset();
+        }, 500);
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const now = new Date();
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('today-date').textContent = now.toLocaleDateString(undefined, dateOptions);
+      });
+    </script>
+  </body>
 </html>

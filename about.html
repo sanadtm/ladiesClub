@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ladies Club | About</title>
@@ -29,7 +30,7 @@
   </header>
 
   <main class="about-container">
-    <section class="about-intro">
+    <div data-aos="fade-up" class="about-intro">
       <h2>About US 🌟</h2>
       <p>
         Hi! We are a group of creative developers with a love for turning ideas
@@ -37,19 +38,19 @@
         blend design and functionality, and this site is our little tribute to
         beautiful UI and playful creativity.
       </p>
-    </section>
+    </div>
 
-    <section class="gallery">
+    <section data-aos="fade-up"   class="gallery">
       <h3>Our Gallery</h3>
       <div class="gallery-grid">
-        <img src="asset/20240906_125956.jpg" alt="Photo 1" class="gallery-img" />
-        <img src="asset/20240906_130054.jpg" alt="Photo 2" class="gallery-img" />
-        <img src="asset/20240906_142229.jpg" alt="Photo 3" class="gallery-img" />
-        <img src="asset/20241030_155311.jpg" alt="Photo 4" class="gallery-img" />
-        <img src="asset/20250322_153517.jpg" alt="Photo 5" class="gallery-img" />
-        <img src="asset/20250322_153547.jpg" alt="Photo 6" class="gallery-img" />
-        <img src="asset/20250402_203626.jpg" alt="Photo 7" class="gallery-img" />
-        <img src="asset/20250407_203519.jpg" alt="Photo 8" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="400" src="asset/20240906_125956.jpg" alt="Photo 1" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="500" src="asset/20240906_130054.jpg" alt="Photo 2" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="600" src="asset/20240906_142229.jpg" alt="Photo 3" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="700" src="asset/20241030_155311.jpg" alt="Photo 4" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="800" src="asset/20250322_153517.jpg" alt="Photo 5" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="900" src="asset/20250322_153547.jpg" alt="Photo 6" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="1000" src="asset/20250402_203626.jpg" alt="Photo 7" class="gallery-img" />
+        <img data-aos="zoom-in" data-aos-delay="1100" src="asset/20250407_203519.jpg" alt="Photo 8" class="gallery-img" />
       </div>
     </section>
 
@@ -68,7 +69,10 @@
     </div>
   </footer>
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
    <script src="js/script.js"></script>
   
 </body>

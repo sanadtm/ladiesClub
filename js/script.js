@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     "Design is intelligence made visible.",
     "Code like a girl. Build like a queen. 🌸",
     "Small details make the biggest impact.",
+    "Let your code be clean, and your soul be softer.",
+    "Craft with care. Build with heart.",
+    "Softness is not weakness. It's power in grace.",
+    "She who codes with kindness changes the world.",
+    "Beauty begins the moment you decide to be yourself.",
+    "In a world full of trends, I want to remain a classic.",
     "Elegance is when the inside is as beautiful as the outside."
   ];
 
@@ -86,3 +92,5 @@ updateDateTime()
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
+
+  
