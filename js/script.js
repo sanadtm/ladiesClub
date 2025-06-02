@@ -111,3 +111,4 @@ updateDateTime()
       }
 
       setInterval(createSnowflake, 200);
+      createSnowflake()
