@@ -93,4 +93,21 @@ updateDateTime()
   setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  
+  function createSnowflake() {
+        const flake = document.createElement("div");
+        flake.className = "snowflake";
+        flake.textContent = "❄️";
+
+        flake.style.left = Math.random() * 100 + "vw";
+        flake.style.animationDuration = 3 + Math.random() * 5 + "s";
+        flake.style.opacity = Math.random();
+        flake.style.fontSize = 16 + Math.random() * 24 + "px";
+
+       document.querySelector(".snow-container").appendChild(flake);
+
+        setTimeout(() => {
+          flake.remove();
+        }, 8000);
+      }
+
+      setInterval(createSnowflake, 200);
