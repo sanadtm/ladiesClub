@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ladies Club | Home</title>
@@ -22,21 +22,21 @@
     </nav>
 
     <header class="header-flex">
-         <h1>Welcome to The Ladies Club</h1>
+      <h1>Welcome to The Ladies Club</h1>
       <div class="date-time-widget">
         <p><strong>🗓️ Today's Date:</strong> <span id="today-date"></span></p>
       </div>
-   
     </header>
 
- <section class="hero">
-      <img data-aos="flip-left" src="asset/20250322_153517.jpg" alt="Banner" class="hero-image" />
-    </section>
+<section class="hero">
+  <div class="snow-container"></div> <!-- NEW snow wrapper -->
+  <img data-aos="flip-left" src="asset/20250322_153517.jpg" alt="Banner" class="hero-image" />
+</section>
 
     <section
       style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap"
     >
-      <div data-aos="fade-up-right"  data-aos-delay="400" class="quote-widget">
+      <div data-aos="fade-up-right" data-aos-delay="400" class="quote-widget">
         <h3>🌸 Daily Inspiration 🌸</h3>
         <p id="quote">Loading quote...</p>
         <button id="reshuffle-btn">🔁 Reshuffle Quote</button>
@@ -57,6 +57,24 @@
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      function createSnowflake() {
+        const flake = document.createElement("div");
+        flake.className = "snowflake";
+        flake.textContent = "❄️";
+
+        flake.style.left = Math.random() * 100 + "vw";
+        flake.style.animationDuration = 3 + Math.random() * 5 + "s";
+        flake.style.opacity = Math.random();
+        flake.style.fontSize = 16 + Math.random() * 24 + "px";
+
+       document.querySelector(".snow-container").appendChild(flake);
+
+        setTimeout(() => {
+          flake.remove();
+        }, 8000);
+      }
+
+      setInterval(createSnowflake, 200);
       AOS.init();
     </script>
     <script src="js/script.js"></script>
