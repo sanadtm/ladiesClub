@@ -30,23 +30,49 @@
     </header>
 
     <div class="section-divider"></div>
+      <h2 style="text-align: center;">🌸 Get in Touch</h2>
+<main data-aos="zoom-in-up" class="contact-section">
 
-    <main data-aos="zoom-in-up" class="contact-container">
-      <h2>🌸 Get in Touch</h2>
-      <form class="contact-form" id="contact-form">
-        <label for="name">👤 Name:</label>
-        <input data-aos="fade-right" type="text" id="name" name="name" placeholder="Enter your name" required />
+  
+  <div class="form-wrapper horizontal-align">
+    <!-- Contact Form -->
+    <form class="contact-form form-box">
+      <h2>🌸 Contact Form</h2>
+      <label for="name">👤 Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
-        <label for="email">📧 Email:</label>
-        <input data-aos="fade-right" type="email" id="email" name="email" placeholder="you@example.com" required />
+      <label for="email">📧 Email:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
-        <label for="message">💬 Message:</label>
-        <textarea data-aos="fade-right" id="message" name="message" placeholder="Write your message here..." required></textarea>
+      <label for="message">💬 Message:</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
 
-        <button data-aos="fade-right" type="submit">Send Message</button>
-      </form>
-      <div id="popup" class="popup">📬 Message Sent! Thank you 🌸</div>
-    </main>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Application Form -->
+    <form class="contact-form form-box">
+      <h2>📝 Application Form</h2>
+
+      <label for="dname">🧍 Driver Name:</label>
+      <input type="text" id="dname" name="dname" placeholder="Enter full name" required />
+
+      <label for="license">🚘 License Number:</label>
+      <input type="text" id="license" name="license" placeholder="Enter license number" required />
+
+      <label for="vehicle">🚗 Vehicle Type:</label>
+      <input type="text" id="vehicle" name="vehicle" placeholder="e.g., Sedan, SUV" required />
+
+      <label for="experience">📅 Experience (Years):</label>
+      <input type="number" id="experience" name="experience" min="0" max="50" required />
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <div id="popup" class="popup">📬 Message Sent! Thank you 🌸</div>
+</main>
+
 
     <footer class="site-footer">
       <p>&copy; 2025 The Ladies Club. All rights reserved.</p>
@@ -56,7 +82,7 @@
         <a href="#">Instagram</a>
       </div>
     </footer>
-
+ <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
     <script>
