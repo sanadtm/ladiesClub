@@ -22,25 +22,7 @@ body {
   color: #e91e63;
 }
 
-.nav-links a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  background-color: #fff;
-  color: #e91e63;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: #e91e63;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
 
 .date-time-widget p {
   margin: 0;
